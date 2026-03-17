@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="The Moody Foodie: investigating stress-reduction effects of culinary activities through wearable monitoring."
+    />
+    <title>The Moody Foodie</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="topbar" data-elevate>
+      <div class="topbar__inner">
+        <div class="brand">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <div class="brand__text">
+            <div class="brand__title">The Moody Foodie</div>
+            <div class="brand__sub">Wearable sensing meets everyday cooking</div>
+          </div>
+        </div>
+        <nav class="nav" aria-label="Page">
+          <a href="#overview">Overview</a>
+          <a href="#methods">Methods</a>
+          <a href="#signals">Signals</a>
+          <a href="#results">Results</a>
+          <a href="#discussion">Discussion</a>
+        </nav>
+        <button class="navbtn" type="button" aria-expanded="false" aria-controls="drawer">
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <button class="drawer__close" type="button">Close</button>
+        <a href="#overview">Overview</a>
+        <a href="#methods">Methods</a>
+        <a href="#signals">Signals</a>
+        <a href="#results">Results</a>
+        <a href="#discussion">Discussion</a>
+        <a href="#team">Team</a>
+      </div>
+      <div class="drawer__scrim" data-close aria-hidden="true"></div>
+    </aside>
+
+    <main id="main">
+      <section class="hero">
+        <div class="hero__bg" aria-hidden="true"></div>
+        <div class="hero__inner">
+          <div class="hero__kicker reveal">CS467 Final Project</div>
+          <h1 class="hero__title reveal">
+            Investigating stress-reduction effects of culinary activities through wearable monitoring
+          </h1>
+          <p class="hero__lede reveal">
+            We studied whether everyday cooking behaviors (snacking, assembly, cooking, baking) produce
+            measurable changes in physiological stress (ECG, GSR) and perceived stress (modified PSS-4).
+          </p>
+          <div class="hero__meta reveal">
+            <div class="pill"><span class="pill__label">Study window</span><span>Feb 23, 2026 to Mar 6, 2026</span></div>
+            <div class="pill"><span class="pill__label">Design</span><span>Within-subjects</span></div>
+            <div class="pill"><span class="pill__label">Signals</span><span>ECG, GSR, Survey</span></div>
+          </div>
+          <div class="hero__cta reveal">
+            <a class="btn" href="#overview">Read the story</a>
+            <a class="btn btn--ghost" href="#figures">Browse figures</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="overview" class="section">
+        <div class="section__inner">
+          <h2 class="section__title reveal">Overview</h2>
+          <div class="grid grid--2">
+            <div class="card reveal">
+              <h3>Motivation</h3>
+              <p>
+                Stress is pervasive and impacts long-term health. Wearables can detect stress responses,
+                but less work models the daily behaviors that might help people regulate stress. Cooking is
+                a promising coping behavior: it can be mindful, sensory, and routine.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>Research Question</h3>
+              <p>
+                Do different culinary activities produce different acute changes in stress?
+                We compared four categories: snacking (≤30s), assembly (≤10m), cooking (stovetop), and baking (oven).
+              </p>
+              <div class="mini">
+                <div class="mini__row">
+                  <span class="mini__k">Hypothesis</span>
+                  <span class="mini__v">Passive prep decreases stress more than heat-based cooking.</span>
+                </div>
+                <div class="mini__row">
+                  <span class="mini__k">Null</span>
+                  <span class="mini__v">No differences across culinary activities.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="banner reveal">
+            <div class="banner__title">What we measured</div>
+            <div class="banner__body">
+              <div class="chips">
+                <span class="chip">Heart rate (HR)</span>
+                <span class="chip">HRV (SDNN, RMSSD)</span>
+                <span class="chip">Tonic GSR</span>
+                <span class="chip">Phasic GSR variability</span>
+                <span class="chip">Phasic peak count</span>
+                <span class="chip">Zero-crossings</span>
+                <span class="chip">Modified PSS-4 total</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="methods" class="section section--alt">
+        <div class="section__inner">
+          <h2 class="section__title reveal">Methods</h2>
+          <div class="grid grid--3">
+            <div class="card reveal">
+              <h3>Participants</h3>
+              <p>
+                College juniors/seniors who cook at least once per day. Convenience sampling due to time constraints.
+                We recorded multiple activities per participant for intra-subject comparison.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>Procedure</h3>
+              <ol class="steps">
+                <li>2 minutes seated baseline (ECG + GSR)</li>
+                <li>Modified PSS-4 ("right now")</li>
+                <li>Complete one culinary activity</li>
+                <li>2 minutes seated post (ECG + GSR)</li>
+                <li>Modified PSS-4 again</li>
+              </ol>
+            </div>
+            <div class="card reveal">
+              <h3>Analysis</h3>
+              <p>
+                We tested normality (Shapiro-Wilk, α = 0.05). Depending on normality, we used paired t-tests
+                or Wilcoxon signed-rank tests with Bonferroni correction (p &lt; 0.008 across 6 pairwise comparisons).
+                We also reported effect sizes and ran OLS regression per metric.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="signals" class="section">
+        <div class="section__inner">
+          <h2 class="section__title reveal">Signals and Processing</h2>
+
+          <div class="grid grid--2">
+            <div class="card reveal">
+              <h3>ECG</h3>
+              <p>
+                Heart rate and HRV were derived using a modified Pan-Tompkins pipeline (band-pass filter, differentiate,
+                square, moving window integration) and cleaned to physiologically realistic RR intervals (0.5s to 1.5s).
+              </p>
+              <div class="kv">
+                <div><span class="kv__k">Filter</span><span class="kv__v">5 to 20 Hz</span></div>
+                <div><span class="kv__k">Integration</span><span class="kv__v">150 ms window</span></div>
+                <div><span class="kv__k">Min distance</span><span class="kv__v">0.4 s</span></div>
+              </div>
+            </div>
+            <div class="card reveal">
+              <h3>GSR</h3>
+              <p>
+                We decomposed electrodermal activity into tonic (SCL) and phasic (SCR) components. From phasic GSR, we
+                also counted peaks and computed a zero-crossing rate.
+              </p>
+              <div class="kv">
+                <div><span class="kv__k">Tonic</span><span class="kv__v">1 Hz low-pass</span></div>
+                <div><span class="kv__k">Phasic</span><span class="kv__v">0.05 Hz high-pass</span></div>
+                <div><span class="kv__k">Peak prominence</span><span class="kv__v">0.0003 V</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div id="figures" class="gallery reveal">
+            <div class="gallery__head">
+              <h3>Figures</h3>
+              
+            </div>
+            <div class="gallery__grid">
+              <figure class="fig" data-zoom>
+                <img
+                  src="./assets/images/ECG_preprocessing.png"
+                  alt="ECG preprocessing steps after each Pan-Tompkins stage."
+                  loading="lazy"
+                />
+                <figcaption>ECG preprocessing pipeline visualization</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/rpeaks.png" alt="Detected R-peaks on a processed ECG segment." loading="lazy" />
+                <figcaption>R-peak detection</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/tonic.png" alt="Decomposed tonic GSR component." loading="lazy" />
+                <figcaption>Tonic GSR component</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/phasic.png" alt="Decomposed phasic GSR component." loading="lazy" />
+                <figcaption>Phasic GSR component</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/ecg_overlay.png" alt="Overlay of raw ECG signals before and after cooking." loading="lazy" />
+                <figcaption>ECG overlay (pre vs post)</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/gsr_overlay.png" alt="Overlay of raw GSR signals before and after cooking." loading="lazy" />
+                <figcaption>GSR overlay (pre vs post)</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/HR_BPM_boxplot.png" alt="Boxplot distribution of heart rate differences across activities." loading="lazy" />
+                <figcaption>HR differences across activities</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/SDNN_s_boxplot.png" alt="Boxplot distribution of SDNN differences across activities." loading="lazy" />
+                <figcaption>SDNN differences across activities</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/RMSSD_s_boxplot.png" alt="Boxplot distribution of RMSSD differences across activities." loading="lazy" />
+                <figcaption>RMSSD differences across activities</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/Tonic_GSR_V_boxplot.png" alt="Boxplot distribution of mean tonic GSR differences across activities." loading="lazy" />
+                <figcaption>Tonic GSR differences</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/Phasic_GSR_V_boxplot.png" alt="Boxplot distribution of phasic GSR variability differences across activities." loading="lazy" />
+                <figcaption>Phasic GSR variability</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/Phasic_Peaks_boxplot.png" alt="Boxplot distribution of phasic peak count differences across activities." loading="lazy" />
+                <figcaption>Phasic peaks</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/Zero-Crossings_boxplot.png" alt="Boxplot distribution of zero-crossing count differences across activities." loading="lazy" />
+                <figcaption>Zero-crossings</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/PSS-4_boxplot.png" alt="Boxplot distribution of perceived stress score differences across activities." loading="lazy" />
+                <figcaption>Perceived stress (PSS-4) differences</figcaption>
+              </figure>
+              <figure class="fig" data-zoom>
+                <img src="./assets/images/correlation_heatmap.png" alt="Correlation heatmap between stress indicators." loading="lazy" />
+                <figcaption>Correlation heatmap</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="section section--alt">
+        <div class="section__inner">
+          <h2 class="section__title reveal">Results</h2>
+          <div class="grid grid--3">
+            <div class="stat reveal">
+              <div class="stat__k">Key finding</div>
+              <div class="stat__v">No significant predictors</div>
+              <div class="stat__s">Activity type did not significantly predict changes across metrics.</div>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__k">OLS example</div>
+              <div class="stat__v">HR: R² = 0.076</div>
+              <div class="stat__s">p = 0.73</div>
+            </div>
+            <div class="stat reveal">
+              <div class="stat__k">Perceived stress</div>
+              <div class="stat__v">PSS-4: R² = 0.140</div>
+              <div class="stat__s">p = 0.480</div>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Effect Size Shortlist (Moderate to Large)</h3>
+            <p class="muted">
+              With low power, effect sizes help surface potential trends even when p-values are not significant.
+            </p>
+            <div class="tablewrap" role="region" aria-label="Effect size shortlist table" tabindex="0">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Activity</th>
+                    <th>Metric</th>
+                    <th>Effect Size</th>
+                    <th>Magnitude</th>
+                    <th>Stress</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Assembly</td>
+                    <td>SDNN</td>
+                    <td>-0.710</td>
+                    <td>Moderate</td>
+                    <td>↑</td>
+                  </tr>
+                  <tr>
+                    <td>Assembly</td>
+                    <td>RMSSD</td>
+                    <td>-0.586</td>
+                    <td>Moderate</td>
+                    <td>↑</td>
+                  </tr>
+                  <tr>
+                    <td>Assembly</td>
+                    <td>PSS-4</td>
+                    <td>0.572</td>
+                    <td>Moderate</td>
+                    <td>↑</td>
+                  </tr>
+                  <tr>
+                    <td>Cooking</td>
+                    <td>SDNN</td>
+                    <td>1.025</td>
+                    <td>Large</td>
+                    <td>↓↓</td>
+                  </tr>
+                  <tr>
+                    <td>Cooking</td>
+                    <td>RMSSD</td>
+                    <td>1.145</td>
+                    <td>Large</td>
+                    <td>↓↓</td>
+                  </tr>
+                  <tr>
+                    <td>Cooking</td>
+                    <td>Tonic GSR</td>
+                    <td>-0.531</td>
+                    <td>Moderate</td>
+                    <td>↓</td>
+                  </tr>
+                  <tr>
+                    <td>Cooking</td>
+                    <td>Phasic Peaks</td>
+                    <td>-0.695</td>
+                    <td>Moderate</td>
+                    <td>↓</td>
+                  </tr>
+                  <tr>
+                    <td>Cooking</td>
+                    <td>PSS-4</td>
+                    <td>0.500</td>
+                    <td>Moderate</td>
+                    <td>↑</td>
+                  </tr>
+                  <tr>
+                    <td>Baking</td>
+                    <td>Phasic GSR</td>
+                    <td>0.600</td>
+                    <td>Large</td>
+                    <td>↑↑</td>
+                  </tr>
+                  <tr>
+                    <td>Snacking</td>
+                    <td>Phasic GSR</td>
+                    <td>0.333</td>
+                    <td>Moderate</td>
+                    <td>↑</td>
+                  </tr>
+                  <tr>
+                    <td>Snacking</td>
+                    <td>Phasic Peaks</td>
+                    <td>-0.404</td>
+                    <td>Moderate</td>
+                    <td>↓</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="grid grid--2">
+            <div class="card reveal">
+              <h3>Correlation Snapshot</h3>
+              <p>
+                Spearman correlation analysis suggested a strong inverse relationship between HR and GSR in several
+                conditions, while perceived stress (PSS-4) did not consistently align with physiological markers.
+              </p>
+              <div class="mini">
+                <div class="mini__row">
+                  <span class="mini__k">Snacking</span>
+                  <span class="mini__v">HR vs GSR: ρ = -0.655 (p = 0.021)</span>
+                </div>
+                <div class="mini__row">
+                  <span class="mini__k">Assembly</span>
+                  <span class="mini__v">PSS-4 vs HR: ρ = 0.785 (p = 0.021)</span>
+                </div>
+              </div>
+            </div>
+            <div class="card reveal">
+              <h3>Takeaway</h3>
+              <p>
+                Across a small sample, we fail to reject the null hypothesis: the specific culinary activity type did not
+                produce consistent, statistically significant changes in physiological or perceived stress.
+              </p>
+              <p class="muted">
+                The most important next step is increasing sample size and reducing sensor noise to improve power and
+                measurement quality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="discussion" class="section">
+        <div class="section__inner">
+          <h2 class="section__title reveal">Discussion</h2>
+          <div class="grid grid--2">
+            <div class="card reveal">
+              <h3>Interpretation</h3>
+              <p>
+                Stress responses varied by person, and the same activity could look “stressful” in one metric but not
+                another. This is consistent with psychophysiology: perceived stress does not always track physiological
+                arousal.
+              </p>
+            </div>
+            <div class="card reveal">
+              <h3>Limitations</h3>
+              <ul class="list">
+                <li>Small sample size (low statistical power).</li>
+                <li>Sensor noise and movement artifacts (ECG + GSR are sensitive to setup and motion).</li>
+                <li>Convenience sampling may limit generalizability.</li>
+                <li>Contextual stressors (exams, deadlines) not controlled.</li>
+                <li>Non-randomized activity order may introduce carryover effects.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card reveal">
+            <h3>Future Work</h3>
+            <div class="grid grid--3">
+              <div class="callout">
+                <div class="callout__t">Weekday vs weekend</div>
+                <div class="callout__b">Test whether context changes stress responses to cooking.</div>
+              </div>
+              <div class="callout">
+                <div class="callout__t">Longer studies</div>
+                <div class="callout__b">Track chronic effects, not only acute pre/post changes.</div>
+              </div>
+              <div class="callout">
+                <div class="callout__t">Recipe familiarity</div>
+                <div class="callout__b">Compare comfort foods vs unfamiliar recipes within cooking and baking.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" class="section section--alt">
+        <div class="section__inner">
+          <h2 class="section__title reveal">Team</h2>
+          <div class="team reveal">
+            <div class="person">
+              <div class="avatar" aria-hidden="true">A</div>
+              <div class="person__meta">
+                <div class="person__name">Alison Bai</div>
+                <div class="person__role">Northwestern University</div>
+              </div>
+            </div>
+            <div class="person">
+              <div class="avatar" aria-hidden="true">B</div>
+              <div class="person__meta">
+                <div class="person__name">Bhavi Barnwal</div>
+                <div class="person__role">Northwestern University</div>
+              </div>
+            </div>
+            <div class="person">
+              <div class="avatar" aria-hidden="true">M</div>
+              <div class="person__meta">
+                <div class="person__name">Montse Villasenor</div>
+                <div class="person__role">Northwestern University</div>
+              </div>
+            </div>
+            <div class="person">
+              <div class="avatar" aria-hidden="true">L</div>
+              <div class="person__meta">
+                <div class="person__name">Ludi Yu</div>
+                <div class="person__role">Northwestern University</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__inner">
+          <div class="footer__left">
+            <div class="footer__title">The Moody Foodie</div>
+          </div>
+          <div class="footer__right">
+            <a href="#main">Back to top</a>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <dialog class="modal" id="modal">
+      <button class="modal__close" type="button" aria-label="Close image">Close</button>
+      <figure class="modal__figure">
+        <img class="modal__img" alt="" />
+        <figcaption class="modal__cap"></figcaption>
+      </figure>
+    </dialog>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+
