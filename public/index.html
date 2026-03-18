@@ -72,19 +72,27 @@
         </div>
       </section>
 
-      <section id="overview" class="section">
-        <div class="section__inner">
-          <h2 class="section__title reveal">Overview</h2>
-          <div class="grid grid--2">
-            <div class="card reveal">
-              <h3>Motivation</h3>
-              <p>
-                Stress is pervasive and impacts long-term health. Wearables can detect stress responses,
-                but less work models the daily behaviors that might help people regulate stress. Cooking is
-                a promising coping behavior: it can be mindful, sensory, and routine.
-              </p>
-            </div>
-            <div class="card reveal">
+	      <section id="overview" class="section">
+	        <div class="section__inner">
+	          <h2 class="section__title reveal">Overview</h2>
+	          <div class="grid grid--2">
+	            <div class="card reveal">
+	              <div class="motivation__header">
+	                <h3>Motivation</h3>
+	                <img
+	                  class="motivation__img"
+	                  src="./assets/images/motivation.png"
+	                  alt="Cooking illustration"
+	                  loading="lazy"
+	                />
+	              </div>
+	              <p>
+	                Stress is pervasive and impacts long-term health. Wearables can detect stress responses,
+	                but less work models the daily behaviors that might help people regulate stress. Cooking is
+	                a promising coping behavior: it can be mindful, sensory, and routine.
+	              </p>
+	            </div>
+	            <div class="card reveal">
               <h3>Research Question</h3>
               <p>
                 Do different culinary activities produce different acute changes in stress?
@@ -400,8 +408,7 @@
             <div class="card reveal">
               <h3>Takeaway</h3>
               <p>
-                Across a small sample, we fail to reject the null hypothesis: the specific culinary activity type did not
-                produce consistent, statistically significant changes in physiological or perceived stress.
+                Across a small sample, we fail to reject the null hypothesis: No culinary activity affects stress levels.
               </p>
               <p class="muted">
                 The most important next step is increasing sample size and reducing sensor noise to improve power and
@@ -515,4 +522,3 @@
     <script src="./script.js" defer></script>
   </body>
 </html>
-

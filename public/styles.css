@@ -336,6 +336,26 @@ code {
   font-size: 14px;
 }
 
+.motivation__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.motivation__header h3 {
+  margin: 0;
+}
+
+.motivation__img {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(20, 14, 30, 0.12);
+}
+
 .steps {
   margin: 0;
   padding-left: 18px;
@@ -816,6 +836,11 @@ code {
 }
 
 @media (max-width: 520px) {
+  .motivation__img {
+    width: 56px;
+    height: 56px;
+  }
+
   .hero__inner {
     padding-top: 64px;
   }
